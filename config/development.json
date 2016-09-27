@@ -1,0 +1,13 @@
+{
+  "ldap": {
+    "server": {
+      "url": "ldap://ldap.forumsys.com:389",
+      "bindDn": "cn=read-only-admin,dc=example,dc=com",
+      "bindCredentials": "password",
+      "searchBase": "dc=example,dc=com",
+      "searchFilter": "(uid={{username}})"
+    }
+  },
+  "mongodb": "mongodb://localhost/twitter",
+  "feedLimit": 100
+}
