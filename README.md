@@ -3,7 +3,7 @@
 ## User Story:
 As part of enhancing our internal services which are available to our employees, we would like to build a Twitter like solution for our employees, where employees can tweet and have followers.
 
-##High Level Requirements :
+## High Level Requirements :
 * We have 10K employees
 * Employees can follow their colleagues, post (or tweet) messages to their followers
 * Use corporate LDAP for user Management
@@ -28,11 +28,15 @@ In the above exercise, please build a RESTful service
 * ldap server
 
 ## Installation:
-1. npm install
+1. npm install --registry https://registry.npmjs.com/
 2. npm start // server will start at localhost:3000
 3. npm test // run unit test
 
 ## Sample commands:
+
+### [postman collection](https://www.getpostman.com/collections/8564cc46ad27462f9abe)
+
+### curl
 1. create user
 curl -XPOST http://localhost:3000/users -d 'email=euler@gmail.com&name=euler'
 curl -XPOST http://localhost:3000/users -d 'email=kaile@gmail.com&name=kaile'
