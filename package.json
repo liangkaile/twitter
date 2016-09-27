@@ -7,14 +7,16 @@
     "test": "node ./node_modules/mocha/bin/mocha"
   },
   "dependencies": {
+    "bluebird": "^3.4.6",
     "body-parser": "~1.15.1",
     "debug": "~2.2.0",
     "express": "~4.13.4",
+    "lodash-node": "^3.10.2",
+    "mocha": "^3.0.2",
     "mongoose": "^4.6.1",
     "morgan": "~1.7.0",
     "passport": "^0.3.2",
     "passport-ldapauth": "^0.6.0",
-    "mocha": "^3.0.2",
     "supertest": "^2.0.0"
   }
 }

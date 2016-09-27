@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var config = require('./config');
 
 var routes = require('./routes/index');
-var tweet = require('./routes/tweet');
+var feed = require('./routes/feed');
 var users = require('./routes/users');
 var login = require('./routes/login');
 
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/tweet', tweet);
+app.use('/feed', feed);
 app.use('/login', login);
 
 // catch 404 and forward to error handler
