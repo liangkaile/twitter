@@ -1,7 +1,9 @@
-User Story:
+# a simple twitter service
+
+## User Story:
 As part of enhancing our internal services which are available to our employees, we would like to build a Twitter like solution for our employees, where employees can tweet and have followers.
 
-High Level Requirements :
+##High Level Requirements :
 * We have 10K employees
 * Employees can follow their colleagues, post (or tweet) messages to their followers
 * Use corporate LDAP for user Management
@@ -13,49 +15,49 @@ High Level Requirements :
 * You are expected to explain the rationale for your choice of technologies and architectural patterns
 
 
-Programming Problem:
+## Programming Problem:
 In the above exercise, please build a RESTful service
 * /feed : To list 100 recent tweets for the logged in user
 * In memory database is sufficient. Optionally, you are welcome to use a persistent data store of your choice.
 * You are encouraged but not required to take advantage of a service code-generation framework of your choice when performing this exercise
 
 
-Dependencies:
+## Dependencies:
 * mongodb
 * nodejs
 * ldap server
 
-Installation:
-1) npm install
-2) npm start // server will start at localhost:3000
-3) npm test // run unit test
+## Installation:
+1. npm install
+2. npm start // server will start at localhost:3000
+3. npm test // run unit test
 
-Sample commands:
-1) create user
+## Sample commands:
+1. create user
 curl -XPOST http://localhost:3000/users -d 'email=euler@gmail.com&name=euler'
 curl -XPOST http://localhost:3000/users -d 'email=kaile@gmail.com&name=kaile'
 
-2) list user -- user id is available in response
+2. list user -- user id is available in response
 curl http://localhost:3000/users
 
-3) ldap auth
+3. ldap auth
 curl -X POST -H "Content-Type: application/json" -d '{
   "username": "euler",
   "password": "password"
 }' "http://localhost:3000/login"
 
-4) add new feed -- please replace the user id
+4. add new feed -- please replace the user id
 curl -X POST -H "Content-Type: application/json" -d '{
   "body": "hello world",
-  "user": "xxxx"
+  "user": "{userid}"
 }' "http://localhost:3000/feeds"
 
-5) get all feeds for a user
+5. get all feeds for a user
 curl -X GET -H "Content-Type: application/json" -H "uid: {{your_uid}}" "http://localhost:3000/tweet"
 
-6) update user with followers -- please replace the user id
+6. update user with followers -- please replace the user id
 curl -X PUT -H "Content-Type: application/json" -d '{
-  "followIds": ["xxxx2", "xxxx3"]
-}' "http://localhost:3000/users/xxxx1"
+  "followIds": ["{usrid1}", "{userid2}"]
+}' "http://localhost:3000/users/{userid}"
 
 
