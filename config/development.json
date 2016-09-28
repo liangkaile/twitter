@@ -9,5 +9,6 @@
     }
   },
   "mongodb": "mongodb://localhost/twitter",
-  "feedLimit": 100
+  "feedNumLimit": 100,
+  "feedTimeLimit" : 3
 }
