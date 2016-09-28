@@ -39,34 +39,34 @@ In the above exercise, please build a RESTful service
 
 ### curl
 1. create user
-curl -XPOST http://localhost:3000/users -d 'email=euler@gmail.com&name=euler'
-curl -XPOST http://localhost:3000/users -d 'email=kaile@gmail.com&name=kaile'
+  * curl -XPOST http://localhost:3000/users -d 'email=euler@gmail.com&name=euler'
+  * curl -XPOST http://localhost:3000/users -d 'email=kaile@gmail.com&name=kaile'
 
 2. list user -- user id is available in response
-curl http://localhost:3000/users
+  * curl http://localhost:3000/users
 
 3. ldap auth
-curl -X POST -H "Content-Type: application/json" -d '{
+  * curl -X POST -H "Content-Type: application/json" -d '{
   "username": "euler",
   "password": "password"
 }' "http://localhost:3000/login"
 
 4. add new feed -- please replace the user id
-curl -X POST -H "Content-Type: application/json" -d '{
+  * curl -X POST -H "Content-Type: application/json" -d '{
   "body": "hello world",
   "user": "{userid}"
 }' "http://localhost:3000/feeds"
 
 5. follow (update user with followIds)
-curl -X PUT -H "Content-Type: application/json" -d '{
+  * curl -X PUT -H "Content-Type: application/json" -d '{
   "followIds": ["{usrid1}", "{userid2}"]
 }' "http://localhost:3000/users/{userid}"
 
 6. get all feeds made by a user
-curl -X GET -H "Content-Type: application/json" -H "uid: {your_uid}" "http://localhost:3000/feed/mine"
+  * curl -X GET -H "Content-Type: application/json" -H "uid: {your_uid}" "http://localhost:3000/feed/mine
 
 7. get all feeds 
-curl -X GET -H "Content-Type: application/json" -H "uid: {your_uid}" "http://localhost:3000/feed"
+  * curl -X GET -H "Content-Type: application/json" -H "uid: {your_uid}" "http://localhost:3000/feed"
 
 
 
