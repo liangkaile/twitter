@@ -35,6 +35,7 @@ In the above exercise, please build a RESTful service
 ## Sample commands:
 
 ### Download [postman collection](https://www.getpostman.com/collections/8564cc46ad27462f9abe)
+  You can download the postman collection and try out the operations.
 
 ### curl
 1. create user
