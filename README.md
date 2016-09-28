@@ -34,7 +34,7 @@ In the above exercise, please build a RESTful service
 
 ## Sample commands:
 
-### [postman collection](https://www.getpostman.com/collections/8564cc46ad27462f9abe)
+### Download [postman collection](https://www.getpostman.com/collections/8564cc46ad27462f9abe)
 
 ### curl
 1. create user
@@ -56,12 +56,17 @@ curl -X POST -H "Content-Type: application/json" -d '{
   "user": "{userid}"
 }' "http://localhost:3000/feeds"
 
-5. get all feeds for a user
-curl -X GET -H "Content-Type: application/json" -H "uid: {{your_uid}}" "http://localhost:3000/tweet"
-
-6. update user with followers -- please replace the user id
+5. follow (update user with followIds)
 curl -X PUT -H "Content-Type: application/json" -d '{
   "followIds": ["{usrid1}", "{userid2}"]
 }' "http://localhost:3000/users/{userid}"
+
+6. get all feeds made by a user
+curl -X GET -H "Content-Type: application/json" -H "uid: {your_uid}" "http://localhost:3000/feed/mine"
+
+7. get all feeds 
+curl -X GET -H "Content-Type: application/json" -H "uid: {your_uid}" "http://localhost:3000/feed"
+
+
 
 
